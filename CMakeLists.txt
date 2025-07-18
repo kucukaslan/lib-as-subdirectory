@@ -8,3 +8,5 @@ add_executable(lib_as_subdirectory main.cpp)
 add_subdirectory(abseil-cpp)
 
 target_link_libraries(lib_as_subdirectory PRIVATE absl::strings)
+target_link_libraries(lib_as_subdirectory PRIVATE absl::log)
+target_link_libraries(lib_as_subdirectory PRIVATE absl::log_initialize)

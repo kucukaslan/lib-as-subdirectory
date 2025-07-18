@@ -41,6 +41,19 @@ As you may have noticed [^shoulda] the `absl::strings` library is linked to the 
 abseil-cpp has many libraries and you can link any of them to your target as needed.
 I linked `absl::strings` since I used [absl::StrCat](https://abseil.io/docs/cpp/guides/strings#abslstrcat-and-abslstrappend-for-string-concatenation).
 
+Let's say we want to use abseil's logging functions[^acthually] instead of `std::cout` in our project.
+[^acthually]: wellll, [not to be pedantic](https://i.redd.it/1ef5ylxhmvx71.jpg), achtually they're logging macros if I may say 
+then we can link the `absl::log` library to our target as well:
+```cmake
+target_link_libraries(lib_as_subdirectory absl::log)
+```
+Usually you'd want to initialize the logging system (?) before using it;
+and as it would be most expected and totally sensible; absl:InitializeLog function
+is not included in the `absl::log` library, you need to link
+the `absl::log_init` library to your target as well:
+```cmake
+target_link_libraries(lib_as_subdirectory absl::log_init)
+```
 
 
 
