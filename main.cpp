@@ -14,8 +14,12 @@ int main(int argc, char* argv[]) {
 
 
     // use abseil strings to print a message
-    std::string message = absl::StrCat("This is a message using ", lang, " and Abseil!");
+    std::string message2 = absl::StrCat(" first ", " second ");
+    std::string message3 = absl::StrCat(" first ", " second ", " third ");
+    std::string message4 = absl::StrCat(" first ", " second ", " third ", " fourth ");
 
-    LOG(INFO) << message;
+    LOG(INFO) << message2;
+    LOG(INFO) << message3;
+    LOG(INFO) << message4;
     return 0;
 }
